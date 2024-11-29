@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TED Talk: Animals and Substances</title>
+    <style>
+        /* Add this to your existing CSS */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: rgba(51, 102, 51, 0.8); /* Semi-transparent green background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    transition: background-color 1s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(68, 136, 68, 0.8); /* Semi-transparent green background */
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+nav a {
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #4CAF50;
+    transform: scale(1.1);
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    margin: 20px;
+    transition: background-color 1s ease;
+}
+
+.content.active {
+    display: block;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.content img:hover {
+    transform: scale(2);
+}
+
+.content p {
+    text-align: justify;
+    color: #333;
+}
+
+.content h2 {
+    text-align: center;
+    color: #333;
+    font-family: 'Georgia', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.intro-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    margin: 30px 0;
+    color: #333;
+}
+
+.intro-text {
+    text-align: justify;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    position: relative;
+    color: #333;
+}
+
+.highlight {
+    color: red;
+}
+
+.divider {
+    border: 0;
+    height: 2px;
+    background: #4CAF50;
+    margin: 40px 0;
+}
+
+.quotes-title {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Georgia', serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.quotes {
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #444;
+}
+
+.quotes p {
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 15px;
+    border-left: 5px solid #4CAF50;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.quotes p:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.quotes p::before {
+    content: "“";
+    font-size: 2em;
+    color: #4CAF50;
+    vertical-align: -0.4em;
+}
+
+.quotes p::after {
+    content: "”";
+    font-size: 2em;
+    color: #4CAF50;
+    vertical-align: -0.4em;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: #388E3C;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.video-link {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.video-link:hover {
+    background-color: #388E3C;
+}
+
+    </style>
+    <script>
+        function showContent(id, title, color) {
+            var contents = document.getElementsByClassName('content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(id).classList.add('active');
+            document.querySelector('header h1').textContent = title;
+            document.querySelector('body').style.backgroundColor = color;
+            document.querySelector('header').style.backgroundColor = color;
+        }
+
+        window.onload = function() {
+            document.getElementById('welcome').classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>TED Talk: Animals and Substances</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showContent('dolphins', 'Dolphins and Pufferfish', '#ADD8E6')">Dolphins</a>
+        <a href="#" onclick="showContent('reindeer', 'Reindeer and Mushrooms', '#FFA07A')">Reindeer</a>
+        <a href="#" onclick="showContent('chimps', 'Chimps and Alcohol', '#FFD700')">Chimps</a>
+        <a href="#" onclick="showContent('jaguars', 'Jaguars and Psychoactive Plants', '#8FBC8F')">Jaguars</a>
+        <a href="#" onclick="showContent('bees', 'Bees and Caffeine', '#FFA500')">Bees</a>
+        <a href="#" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Home</a>
+    </nav>
+    <div id="welcome" class="content">
+        <h1 class="intro-title">Addictions in Animals</h1>
+        <div class="intro-text">
+            <p class="highlight">
+"Addiction is one of the most destructive forces in both human and animal lives. It starts innocently – with a small habit or curiosity – but over time, it takes hold, controlling behavior and thoughts. Whether it's a human addiction to substances or an animal seeking out harmful substances in nature, addiction can change an individual's entire existence. It's not just a physical need – it's a mental and emotional trap that is incredibly hard to escape from, leading to long-lasting damage."
+            </p>
+        </div>
+        <hr class="divider">
+        <h2 class="quotes-title">Quotes</h2>
+        <div class="quotes">
+            <p><strong>"Addiction begins with the hope that something 'out there' can instantly fill up the emptiness inside."</strong> – Jean Kilbourne</p>
+            <p><strong>"Addiction is a way to escape reality, even if that escape is temporary."</strong> – Anonymous</p>
+            <p><strong>"Addiction is not just a habit; it’s a way of escaping reality, and once it starts, it’s hard to live without it."</strong> – Anonymous</p>
+            <p><strong>"Addiction is like LEGO blocks – at first, you play with them for fun, but eventually, you can’t stop, and after an hour, the whole floor is filled with pieces you don’t know how to use."</strong> – Anonymous</p>
+        </div>
+    </div>
+    <!-- Improved Dolphins and Pufferfish Section -->
+ <div id="dolphins" class="content">
+    <h2>Dolphins and Pufferfish</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+          <img src="delfin 1.jpeg" width="259" height="194" alt=""/>
+            <p>Tripping dolphine</p>
+      </div>
+        <div class="grid-item">
+            <img src="delfin 2.jpeg" width="225" height="225" alt=""/>
+<p>puff puff pass</p>
+      </div>
+        <div class="grid-item">
+            <img src="delfin 3.jpeg" width="257" height="196" alt=""/>
+<p>Dolphine with pufferfish</p>
+      </div>
+        <div class="grid-item">
+           <img src="delfin 4.jpg" width="1200" height="628" alt=""/>
+<p>idk</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <a href="" class="video-link" target="_blank">Watch Video</a>
+    <a href="https://youtu.be/msx3BAhIeQg?si=1SAJ8esFdHC-PjGi" class="video-link" target="_blank" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Back to Home</a>
+</div>
+
+    <div id="reindeer" class="content">
+    <h2>Reindeer and Mushrooms</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+          <img src="wefgefgergertgert.jpg" width="1075" height="995" alt=""/>
+<p class="image-description">Reindeer in Siberia eating Amanita muscaria mushrooms.</p>
+      </div>
+        <div class="grid-item">
+           <img src="sdknfv nf gne fgkwn rk.jpg" width="940" height="626" alt=""/>
+<p class="image-description">These mushrooms have psychoactive properties.</p>
+      </div>
+        <div class="grid-item">
+            <img src="1_YzpDCBZx3nNtS5KtDh6bCA.png" width="1024" height="1024" alt=""/>
+<p class="image-description">Reindeer after eating mushrooms.</p>
+      </div>
+        <div class="grid-item">
+            <img src="01518080.jpg" width="700" height="465" alt=""/>
+<p class="image-description">R.w.m</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <a href="https://www.youtube.com/watch?v=example2" class="video-link" target="_blank">Watch Video</a>
+    <a href="#" class="back-link" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Back to Home</a>
+</div>
+
+	<div id="chimps" class="content">
+    <h2>Chimps and Alcohol</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+          <img src="chimp 2.jpeg" width="235" height="214" alt=""/>
+<p class="image-description">Chimpanzees enjoying fermented fruits in the wild.</p>
+      </div>
+        <div class="grid-item">
+            <img src="erer.jpeg" width="183" height="275" alt=""/>
+<p class="image-description">Fermented fruits can have a high alcohol content.</p>
+      </div>
+        <div class="grid-item">
+           <img src="chimps.jpeg" width="300" height="168" alt=""/>
+<p class="image-description">Chimps have developed a taste for these fruits over generations.</p>
+      </div>
+        <div class="grid-item">
+           <img src="3 chimp.jpeg" width="275" height="183" alt=""/>
+<p class="image-description">Observations show that some chimps prefer fermented fruits.</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <a href="https://www.youtube.com/watch?v=example3" class="video-link" target="_blank">Watch Video</a>
+    <a href="#" class="back-link" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Back to Home</a>
+</div>
+<div id="jaguars" class="content">
+    <h2>Jaguars and Psychoactive Plants</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+          <img src="gdfdh.jpeg" width="275" height="183" alt=""/>
+<p class="image-description">Jaguars in the Amazon jungle eating psychoactive plants.</p>
+      </div>
+        <div class="grid-item">
+           <img src="pobrane.jpeg" width="276" height="183" alt=""/>
+<p class="image-description">These plants cause hallucinations in jaguars.</p>
+      </div>
+        <div class="grid-item">
+            <img src="gjhjkjhgfrew.jpeg" width="280" height="180" alt=""/>
+<p class="image-description">Jaguars have been observed seeking out these plants.</p>
+      </div>
+        <div class="grid-item">
+           <img src="sfsfhsfhhwh.jpeg" width="298" height="169" alt=""/>
+<p class="image-description">jaguar</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <a href="https://www.youtube.com/watch?v=example4" class="video-link" target="_blank">Watch Video</a>
+    <a href="#" class="back-link" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Back to Home</a>
+</div>
+<div id="bees" class="content">
+    <h2>Bees and Caffeine</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+<img src="iu,mjynhtrgbef.jpeg" width="276" height="183" alt=""/>
+<p class="image-description">Bees collecting nectar from caffeine-rich plants.</p>
+      </div>
+        <div class="grid-item">
+     <img src="jgfdcx.jpeg" width="300" height="168" alt=""/>
+<p class="image-description">Caffeine can enhance bees' memory and efficiency.</p>
+      </div>
+        <div class="grid-item">
+           <img src="pppopnjihu.jpeg" width="300" height="168" alt=""/>
+<p class="image-description">Bees are attracted to plants with caffeine.</p>
+      </div>
+        <div class="grid-item">
+            <img src="nnknkknknnj.jpeg" width="300" height="168" alt=""/>
+<p class="image-description">This behavior helps plants with caffeine spread their pollen.</p>
+      </div>
+    </div>
+    <hr class="divider">
+    <a href="https://www.youtube.com/watch?v=example5" class="video-link" target="_blank">Watch Video</a>
+    <a href="#" class="back-link" onclick="showContent('welcome', 'TED Talk: Animals and Substances', 'rgba(51, 102, 51, 0.8)')">Back to Home</a>
+</div>
+
+	
+</body>
+</html>
